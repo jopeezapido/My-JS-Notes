@@ -1,11 +1,15 @@
-function chessHeight(height){
+
+function oddColumn(num,height,width){
+	
 	for (i = 0; i < height; i++){
-		var string = '# \n';
-		console.log(string)
-
+		num += 1;
+		if (num % 2 == 0){
+			console.log('#')
+		}
+		else if (num % 2 != 0){
+			console.log(' ')
+		}
 	}
-
-	//console.log(string);
 }
 
-chess(0)
+oddColumn(0,8,1);
