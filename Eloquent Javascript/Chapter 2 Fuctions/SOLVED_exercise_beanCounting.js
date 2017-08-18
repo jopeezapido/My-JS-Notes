@@ -1,8 +1,11 @@
 function countBs(str){
 	var arr = str.split('');
 	var mappy = arr.filter(function (elem){
-		return elem == 'B';
+		var matchy = elem.match(/B/g);// or you could just:
+		//return elem == 'B';
+		return matchy;
 	})
+	
 	var arrLengthOfCountBs = mappy.length;
 	return arrLengthOfCountBs
 }
