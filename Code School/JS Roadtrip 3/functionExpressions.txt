@@ -1,3 +1,4 @@
+/*Function Expressions and Anonymous Functions*/
 
 Challenge 1: Changing Declarations to Expressions
 
@@ -5,7 +6,7 @@ Developers for the Forest of Function Expressions Theme Park have created a func
 
 Convert the function from a named function declaration to an anonymous function expression and assign it to a variable called runAway.
 
-
+---------------------------------
 Challenge 2: Using Function Expressions with Parameters
 
 The devs at the Death-Defying Dogwoods have determined a specific formula for the quantifiable amount of fear generated at the theme park. Their formula is based on the amount of people, the amount of rain, and the amount of sharks. Yes. Sharks.
@@ -19,6 +20,7 @@ The devs at the Death-Defying Dogwoods have determined a specific formula for th
 
 	Check your variable values and function call. Assign the return value to the fear variable at the end.
 
+-------------------------------
 Challenge 3: Displaying Function Contents
 
 Periodically, the devs at the Haunted Hickory House need to be reminded of their formula. They would like to view the contents of the function, rather than executing it.
@@ -32,6 +34,7 @@ Write one line of code to alert the contents of the variable that stores the fun
   	return totalFear;
 	};
 
+---------------------------------
 Challege 4: Functions as Parameters, Arguments and Return Values
 
 Well, it stands to reason that some people might not want to experience the Haunted Hickory House if the fear is significantly elevated on that day.
@@ -51,3 +54,126 @@ For fear levels from 200 through 300 inclusive (i.e., fear >= 200 && fear <= 300
 	Think you'll make it?
 
 Note: You do not need to change the existing code that’s provided for you in the challenge editor.
+
+
+/*Function Expressions As Direct Parameters*/
+
+Challenge 1: Using Map with Arrays
+
+Over at Maple Mountain, the dev team has received some name data from the customer terminal that they want to use to customize greetings for each of their passengers. But the data consists of an array with many subarrays where the first and last names of each passenger are split up.
+
+They want to take the passengers array and convert those subarrays into strings that contain the first and last name for each passenger.
+
+Create a modifiedNames variable to store our new data.
+Assign passengers.map() to the modifiedNames variable. This will allow us to pass in a function to be used on every element in the array.
+Pass an anonymous function to map().
+The anonymous function should take in arrayCell as a parameter and use that to return a string with the first and last name for a passenger. In other words, if you were to pass in a ["Jason", "Millhouse"] array, the function should return a "Jason Millhouse" string.
+
+-----------------------------------------------------
+
+Challenge 2: Using Map With Arrays II
+
+The passengers have arrived at Maple Mountain! Take the modifiedNames array that you produced in the last challenge, and map a new anonymous function on it.
+
+The function should alert the following message to the screen for each passenger in turn:
+
+Yo, <name>!
+Note: Since we are creating an alert message, you won’t need to return a value or create any new variables. Normally you would use map’s return value, but this is just for practice.
+
+------------------------------------------------------
+
+Challenge 3: Expressions Inside Arrays
+
+The folks over at Poplar Puzzlers need an array of functions for one of their puzzles. They’ve requested your help in making the array, which they would like to be called puzzlers. The cells of the array should each contain a function, and these functions–well, what they return–are listed here in order. Each function has one parameter. Note input below represents the parameter, and you will need to convert the math formulas to JavaScript:
+
+1) Returns 3 * input - 8
+2) Returns (input + 2)3
+3) Returns input2 - 9
+4) Returns input % 4
+
+Use your knowledge of arrays and anonymous function expressions to build this array of functions.
+
+Note: Use parentheses with your return statements if you’re having trouble with the order of operations.
+
+/*Returned Functions and Immediate Invocation*/
+
+//Challenge 1: Choose their own adventure
+
+Ash Adventures has three different “adventures” to choose from, and customers are prompted for a number at a terminal. The number is stored as userChoice and then passed into a function called adventureSelector.
+
+Inside the function, you need to return an anonymous function based on the number that the user selected. Each of your three anonymous functions should contain a boarding alert message:
+
+If the user selects 1:
+
+You selected the Vines of Doom!
+
+If the user selects 2:
+
+Looks like you want the Lake of Despair!
+
+If the user selects 3:
+
+The Caves of Catastrophe!
+
+Assume the user’s choice has already been stored as 1, 2, or 3, and is passed in as the userChoice parameter. Make sure that you return all message functions as anonymous functions, instead of stored in variables. You do not need to call the function at the end.
+
+
+------------------------------------------------------
+
+//Challege 2: Immediately-Invoked Adventure!
+
+//Write one line of code that calls adventureSelector, passes it 3 as an argument, and that immediately invokes the function that gets returned. Here’s adventureSelector for your reference:
+
+function adventureSelector(userChoice) {
+  if (userChoice == 1) {
+    return function() {
+      alert("You selected the Vines of Doom!");
+    };
+  } else if (userChoice == 2) {
+    return function() {
+      alert("Looks like you want the Lake of Despair!");
+    };
+  } else if (userChoice == 3) {
+    return function() {
+      alert("The Caves of Catastrophe!");
+    };
+  }
+}
+
+------------------------------------------------------
+
+//Challenge 3: Queue Builder
+
+The devs at Poplar Puzzles would like you to treat an array of functions like a Queue, passing the result of each function into the next until the Queue is empty. They’ve sent you the puzzlers Queue of functions, and the following instructions:
+
+1) Build a function and assign it to a variable named applyAndEmpty.
+
+2) The function should take in an input number and a queue of functions as parameters.
+
+3) Using a for loop, call the functions in the queue in order with the input number, where the results of each function becomes the next function’s input.
+
+4) Once done this loop, return from applyAndEmpty the final function’s result. Additionally, the queue should be empty at this point.
+
+5) Lastly, call the applyAndEmpty function using the provided start variable and the puzzlers Queue as arguments, and alert the result.
+
+
+Hint: Build a function and assign to a newly declared variable applyAndEmpty. Use a loop within your function in order to empty the queue. You’ll need to use shift() to take the first element off the queue.
+
+------------------------------------------------------
+
+//Challenge 4: Immediately-Invoked Puzzler
+
+Now the Poplar Puzzle-makers have sent you a puzzle with a new set of functions to use on that puzzle. To display your overwhelming array and function expression mastery, alert the answer to the following question:
+
+“What is obtained when the result of passing 9 into the fourth function of the puzzlers array is then passed into the function whose array index matches the result of passing 3 into the second function of the puzzlers array?”
+
+To really impress them, the expression used in your alert should:
+
+Use just one line of code.
+Involve no manual calculation or hard-coded math on your part.
+Use indices of arrays to access functions.
+Use parentheses to pass in parameters to immediately-invoking functions.
+Note:
+
+The required answer is not an example of good style, nor is it intended as such.
+The main point is to give you practice with the mechanics of arrays and function calls.
